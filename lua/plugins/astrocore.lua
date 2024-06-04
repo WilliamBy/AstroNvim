@@ -1,9 +1,5 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
--- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
---       as this provides autocomplete and documentation while editing
 
 ---@type LazySpec
 return {
@@ -32,40 +28,81 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+        exrc = true, -- local config support (.nvim.lua .nvimrc .exrc)
+        tabstop = 4,
+        shiftwidth = 4,
+        expandtab = true,
+        autoindent = true,
+        smartindent = true,
+        wrapmargin = 2,
+        linebreak = true,
+        breakindent = true,
+        showbreak = "> ",
+        cursorline = true,
+        splitright = true,
+        splitbelow = true,
+        ignorecase = true,
+        smartcase = true,
       },
       g = { -- vim.g.<key>
-        -- configure global vim variables (vim.g)
-        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
-        -- This can be found in the `lua/lazy_setup.lua` file
       },
     },
-    -- Mappings can be configured through AstroCore as well.
-    -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
-      -- first key is the mode
+      -- normal mode
       n = {
         -- second key is the lefthand side of the map
 
-        -- navigate buffer tabs
-        ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        -- basic edit
+        ["L"] = { "$", desc = "line tail" },
+        ["H"] = { "0", desc = "line head" },
+        ["<C-s>"] = { "<CMD>w<CR>", desc = "Save Buffer" },
+        ["z"] = { desc = "Bootstrap" },
+        ["zk"] = { "H", desc = "viewport top" },
+        ["zj"] = { "L", desc = "viewport bottom" },
 
-        -- mappings seen under group name "Buffer"
+        -- buffer operation
+        ["<Leader>b"] = { desc = "Buffers" },
+        ["<C-n>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["<C-p>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        ["<C-S-p>"] = { function() require("astrocore.buffer").move(1) end, desc = "Move buffer right" },
+        ["<C-S-n"] = { function() require("astrocore.buffer").move(-1) end, desc = "Move buffer left" },
+        ["<Leader>bw"] = { "<CMD>w<CR>", desc = "Save Buffer" },
+        ["<Leader>bq"] = { function() require("astrocore.buffer").close(0) end, desc = "Close current buffer" },
         ["<Leader>bd"] = {
           function()
             require("astroui.status.heirline").buffer_picker(
               function(bufnr) require("astrocore.buffer").close(bufnr) end
             )
           end,
-          desc = "Close buffer from tabline",
+          desc = "Close buffer selected",
         },
+        ["<Leader>bo"] = { function() require("astrocore.buffer").close_all(true) end, desc = "Close all buffers" },
 
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        -- ["<Leader>b"] = { desc = "Buffers" },
+        -- Window Operation
+        ["<C-S-h>"] = { "<C-w>H", desc = "Move left window" },
+        ["<C-S-l>"] = { "<C-w>L", desc = "Move right window" },
+        ["<C-S-j>"] = { "<C-w>J", desc = "Move down window" },
+        ["<C-S-k>"] = { "<C-w>K", desc = "Move up window" },
+        ["<leader>wq"] = { "<C-w>q", desc = "Quit window" },
 
-        -- setting a mapping to false will disable it
-        -- ["<C-S>"] = false,
+        -- Toggle
+        ["<Leader>n"] = { desc = "Toggle" },
+        ["<leader>nh"] = { "<CMD>nohl<CR>", desc = "No highlight" },
+        ["<leader>nw"] = { function() vim.wo.wrap = not vim.wo.wrap end, desc = "Toggle wrap" },
+        ["<leader>nd"] = { function() require("utils").toggle_diagnostic(0) end, desc = "Toggle diagnostic" },
+        ["<leader>nc"] = { function() vim.diagnostic.reset() end, desc = "Reset diagnosti cache" },
+      },
+
+      -- insert mode
+      i = {
+        -- basic edit
+        ["<C-s>"] = { "<ESC><CMD>w<CR>", desc = "Save Buffer" },
+      },
+
+      -- visual mode
+      v = {
+        ["L"] = { "$", desc = "line tail" },
+        ["H"] = { "0", desc = "line head" },
       },
     },
   },
