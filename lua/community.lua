@@ -5,6 +5,19 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+  -- Language Specific
   { import = "astrocommunity.pack.lua" },
-  -- import/override with your plugins folder
+  { import = "astrocommunity.pack.go" },
+  -- Project
+  { import = "astrocommunity.project.projectmgr-nvim" },
+  -- Edit & Motion
+  { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.motion.flash-nvim" },
+  -- UI
+  { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  -- Completion
+  { import = "astrocommunity.completion.cmp-latex-symbols" },
+  -- External Integration
+  { import = "astrocommunity.recipes.neovide" },
 }
