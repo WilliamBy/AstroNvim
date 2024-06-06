@@ -7,17 +7,49 @@ return {
   "AstroNvim/astrocommunity",
   -- Language Specific
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.scala" },
+  { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.sql" },
+  { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.proto" },
   -- Project
-  { import = "astrocommunity.project.projectmgr-nvim" },
+  { import = "astrocommunity.project.nvim-spectre" },
   -- Edit & Motion
+  { import = "astrocommunity.editing-support.vim-move" },
+  { import = "astrocommunity.editing-support.neogen" },
+  { import = "astrocommunity.editing-support.nvim-regexplainer" },
+  { import = "astrocommunity.editing-support.refactoring-nvim" },
+  { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
+  { import = "astrocommunity.editing-support.mini-splitjoin" },
+  { import = "astrocommunity.editing-support.mini-operators" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.motion.flash-nvim" },
   -- UI
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
-  -- Completion
+  { import = "astrocommunity.utility.noice-nvim" },
+  -- LSP
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
+  { import = "astrocommunity.lsp.lspsaga-nvim" },
+  { import = "astrocommunity.lsp.lsplinks-nvim" },
+  { import = "astrocommunity.lsp.lsp-signature-nvim" },
+  { import = "astrocommunity.lsp.actions-preview-nvim" },
+  { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
+  -- DAP
+  { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
+  -- cmp
   { import = "astrocommunity.completion.cmp-latex-symbols" },
+  -- VSC
+  { import = "astrocommunity.git.neogit" },
+  { import = "astrocommunity.git.diffview-nvim" },
   -- External Integration
   { import = "astrocommunity.recipes.neovide" },
+  { import = "astrocommunity.recipes.vscode" },
 }

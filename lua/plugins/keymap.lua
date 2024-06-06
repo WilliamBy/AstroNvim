@@ -46,14 +46,17 @@ return {
         ["<C-S-l>"] = { "<C-w>L", desc = "Move right window" },
         ["<C-S-j>"] = { "<C-w>J", desc = "Move down window" },
         ["<C-S-k>"] = { "<C-w>K", desc = "Move up window" },
-        ["<leader>wq"] = { "<C-w>q", desc = "Quit window" },
+        ["<Leader>wq"] = { "<C-w>q", desc = "Quit window" },
 
         -- Toggle
-        ["<Leader>n"] = { desc = "Toggle" },
-        ["<leader>nh"] = { "<CMD>nohl<CR>", desc = "No highlight" },
-        ["<leader>nw"] = { function() vim.wo.wrap = not vim.wo.wrap end, desc = "Toggle wrap" },
-        ["<leader>nd"] = { function() require("utils").toggle_diagnostic(0) end, desc = "Toggle diagnostic" },
-        ["<leader>nc"] = { function() vim.diagnostic.reset() end, desc = "Reset diagnosti cache" },
+        ["<Leader>n"] = { "", desc = "Toggle" },
+        ["<Leader>nh"] = { "<CMD>nohl<CR>", desc = "No highlight" },
+        ["<Leader>nw"] = { function() vim.wo.wrap = not vim.wo.wrap end, desc = "Toggle wrap" },
+        ["<Leader>nd"] = { function() require("utils").toggle_diagnostic(0) end, desc = "Toggle diagnostic" },
+        ["<Leader>nc"] = { function() vim.diagnostic.reset() end, desc = "Reset diagnosti cache" },
+
+        -- Find & Search
+        ["<leader>fg"] = { "<CMD>Telescope live_grep<CR>", desc = "Search Text" },
       },
 
       -- insert mode

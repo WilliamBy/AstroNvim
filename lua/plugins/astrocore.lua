@@ -45,6 +45,7 @@ return {
         smartcase = true,
       },
       g = { -- vim.g.<key>
+        move_key_modifier_visualmode = "S", -- used by vim-move
       },
     },
   },
