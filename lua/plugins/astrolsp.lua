@@ -1,4 +1,3 @@
-if true then return {} end
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 
@@ -78,10 +77,34 @@ return {
     mappings = {
       n = {
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
+        gy = {
+          "<CMD>Lspsaga finder tyd<CR>",
+          desc = "Definition of current type",
+          cond = "textDocument/typeDefinition",
+        },
+        gd = {
+          "<CMD>Lspsaga finder def<CR>",
+          desc = "Definition of current symbol",
+          cond = "textDocument/definition",
+        },
         gD = {
-          function() vim.lsp.buf.declaration() end,
+          "<CMD>Trouble lsp_declarations toggle_preview preview.postion=bottom<CR>",
           desc = "Declaration of current symbol",
           cond = "textDocument/declaration",
+        },
+        gI = {
+          "<CMD>Lspsaga finder imp<CR>",
+          desc = "Implementation of current symbol",
+          cond = "textDocument/implementation",
+        },
+        gR = {
+          "<CMD>Lspsaga finder ref<CR>",
+          desc = "References of current symbol",
+          cond = "textDocument/references",
+        },
+        ["<leader>lr"] = {
+          "<CMD>lspsaga lsp_rename ++project<CR>",
+          desc = "rename current symbol within project"
         },
       },
     },
