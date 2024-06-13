@@ -27,13 +27,12 @@ return {
       ),
       opts.button("f", "󰱼  Find file", ":Telescope find_files <CR>", { silent = true }),
       opts.button("e", "  New file", ":ene <BAR> startinsert <CR>", { silent = true }),
-      opts.button("r", "  Recent files", ":Telescope oldfiles <CR>", { silent = true }),
-      opts.button("t", "󱘣  Find text", ":Telescope live_grep <CR>", { silent = true }),
-      opts.button("c", "  Configuration", ":e ~/.config/nvim<CR>", { silent = true }),
+      opts.button("o", "  Old files", ":Telescope oldfiles <CR>", { silent = true }),
+      opts.button("c", "  Configuration", ":e" .. vim.fn.stdpath("config") .. "<CR>", { silent = true }),
       opts.button("q", "  Quit Neovim", ":qa<CR>", { silent = true }),
     }
     opts.config.layout = {
-      { type = "padding", val = 2 },
+      { type = "padding", val = 0 },
       opts.section.header,
       { type = "padding", val = 2 },
       opts.section.buttons,
