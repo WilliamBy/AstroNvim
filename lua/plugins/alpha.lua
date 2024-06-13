@@ -28,7 +28,7 @@ return {
       opts.button("f", "󰱼  Find file", ":Telescope find_files <CR>", { silent = true }),
       opts.button("e", "  New file", ":ene <BAR> startinsert <CR>", { silent = true }),
       opts.button("o", "  Old files", ":Telescope oldfiles <CR>", { silent = true }),
-      opts.button("c", "  Configuration", ":e" .. vim.fn.stdpath("config") .. "<CR>", { silent = true }),
+      opts.button("c", "  Configuration", ":e " .. vim.fn.stdpath("config") .. "<CR>", { silent = true }),
       opts.button("q", "  Quit Neovim", ":qa<CR>", { silent = true }),
     }
     opts.config.layout = {
