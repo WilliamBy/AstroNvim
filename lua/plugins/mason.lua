@@ -8,10 +8,9 @@ return {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "lua_ls",
-        "gopls",
-        "clangd",
-        "pyright",
       })
+      -- disable lsp tools automatic installaion
+      opts.automatic_installation = false
     end,
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
@@ -22,7 +21,6 @@ return {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "stylua",
-        "prettier",
         -- add more arguments for adding more null-ls sources
       })
     end,
@@ -33,7 +31,6 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "python",
         -- add more arguments for adding more debuggers
       })
     end,

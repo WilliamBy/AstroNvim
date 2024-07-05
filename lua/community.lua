@@ -4,11 +4,11 @@
 
 ---@type LazySpec
 return {
-  "AstroNvim/astrocommunity",
+  { "AstroNvim/astrocommunity", dev = false },
   -- Language Specific
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.cpp" },
-  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.go"},
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.scala" },
@@ -19,6 +19,7 @@ return {
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.proto" },
+  { import = "astrocommunity.pack.hyprlang" },
   -- Project
   { import = "astrocommunity.project.nvim-spectre" },
   -- Edit & Motion
@@ -42,6 +43,8 @@ return {
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.lsp.actions-preview-nvim" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
+  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
+  { import = "astrocommunity.utility.mason-tool-installer-nvim"},
   -- DAP
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   -- cmp

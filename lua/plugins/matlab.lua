@@ -9,6 +9,7 @@ return {
   },
   {
     "AstroNvim/astrocore",
+    optional = true,
     ---@type AstroCoreOpts
     opts = {
       options = {

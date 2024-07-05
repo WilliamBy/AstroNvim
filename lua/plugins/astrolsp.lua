@@ -40,7 +40,7 @@ return {
     },
     -- customize language server configuration options passed to `lspconfig`
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      clangd = { { "c", "cpp", "objc", "objcpp", "cuda" } },
     },
     -- customize how language servers are attached
     handlers = {
