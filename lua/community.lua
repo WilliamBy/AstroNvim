@@ -11,6 +11,7 @@ return {
   { import = "astrocommunity.pack.go"},
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.lsp.nvim-java" },
   { import = "astrocommunity.pack.scala" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.sql" },
@@ -21,8 +22,8 @@ return {
   { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.pack.hyprlang" },
   -- Project
-  { import = "astrocommunity.project.nvim-spectre" },
   -- Edit & Motion
+  { import = "astrocommunity.search.nvim-spectre" },
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.editing-support.nvim-regexplainer" },
@@ -50,7 +51,6 @@ return {
   -- cmp
   { import = "astrocommunity.completion.cmp-latex-symbols" },
   -- VSC
-  { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.git.diffview-nvim" },
   -- External Integration
   { import = "astrocommunity.recipes.neovide" },

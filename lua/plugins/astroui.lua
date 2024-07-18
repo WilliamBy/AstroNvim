@@ -5,6 +5,7 @@
 return {
   {
     "AstroNvim/astroui",
+    optional = true,
     ---@type AstroUIOpts
     opts = {
       -- change colorscheme

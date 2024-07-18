@@ -67,8 +67,8 @@ return {
 
       -- visual mode
       v = {
-        ["L"] = { "$", desc = "line tail" },
-        ["H"] = { "0", desc = "line head" },
+        ["<S-h>"] = { "0", desc = "line head" },
+        ["<S-l>"] = { "$", desc = "line tail" },
       },
     },
   },

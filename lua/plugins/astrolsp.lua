@@ -4,6 +4,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
+  optional = true,
   ---@type AstroLSPOpts
   opts = {
     -- Configuration table of features provided by AstroLSP
