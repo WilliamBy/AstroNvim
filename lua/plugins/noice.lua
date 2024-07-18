@@ -2,18 +2,23 @@
 return {
   "folke/noice.nvim",
   optional = true,
-  ---@type NoiceConfig
-  opts = {
-    lsp = {
-      signature = {
-        enabled = false,
+  opts = function(_, opts)
+    local utils = require "astrocore"
+    return utils.extend_tbl(opts, {
+      lsp = {
+        signature = {
+          enabled = false,
+        },
+        hover = {
+          enabled = false,
+        },
+        progress = {
+          enabled = false,
+        },
       },
-      hover = {
-        enabled = false,
+      presets = {
+        bottom_search = false, -- use a classic bottom cmdline for search
       },
-      progress = {
-        enabled = false,
-      },
-    },
-  },
+    })
+  end,
 }
