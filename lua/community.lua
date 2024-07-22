@@ -56,4 +56,5 @@ return {
   -- External Integration
   { import = "astrocommunity.recipes.neovide" },
   { import = "astrocommunity.recipes.vscode" },
+  { import = "astrocommunity.media.vim-wakatime" },
 }
