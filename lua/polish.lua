@@ -7,6 +7,7 @@ vim.filetype.add {
   extension = {
     foo = "fooscript",
     api = 'go-zero',
+    bashrc = 'bash',
   },
   filename = {
     ["Foofile"] = "fooscript",

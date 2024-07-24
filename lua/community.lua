@@ -49,8 +49,11 @@ return {
   { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   -- DAP
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
+  -- Runner
+  { import = "astrocommunity.code-runner.sniprun" },
   -- cmp
   { import = "astrocommunity.completion.cmp-latex-symbols" },
+  { import = "astrocommunity.completion.fittencode-nvim" },
   -- VSC
   { import = "astrocommunity.git.diffview-nvim" },
   -- External Integration
